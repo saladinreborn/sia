@@ -7,8 +7,8 @@
 			<a href="<?php echo base_url(); ?>pbba/infonilai"><li id="end-tab" class="current">Info Nilai</li></a>
 		</ul>		
 <div id="content-space">
-		<h2>Jadwal Ujian TOEC dan IKLA</h2>
-			<h3>Jadwal yang telah diambil</h3>
+		<h2>Informasi Nilai Ujian TOEC dan IKLA</h2>
+			<h3>Nilai Ujian Terbaru</h3>
 			<table class="table table-bordered table-hover mid">
 			<thead>
 				<tr>
@@ -24,7 +24,7 @@
 					<th>Jam</th>
 					<th>Ruang</th>
 				</tr>
-				</thead>
+			</thead>
 				<tbody>
 				<tr class="error">
 					<td>1</td>
@@ -47,6 +47,22 @@
 					<td>Lulus</td>
 				</tr>
 			</tbody>
+			</table>
+
+			<h3>Nilai Ujian yang Pernah Diikuti</h3>
+			<table class="table table-bordered table-hover mid">
+				<thead>
+				<tr>
+					
+					<th >Ujian</th>
+					<th>Hari</th>
+					<th>Tanggal</th>
+					<th>Jam</th>
+					<th>Ruang</th>
+					<th >Nilai</th>
+					<th >Keterangan</th>
+				</tr>
+			</thead>
 			</table>
 		</div>
 	</div>

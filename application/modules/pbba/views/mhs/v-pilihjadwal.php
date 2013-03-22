@@ -61,15 +61,16 @@
 			<h3>Jadwal Sebelumnya</h3>
 			<form class="form-horizontal" name="pilihbulan">
 				<div class="control-group">
-					<label class="control-label">Bulan</label>
-					<div class="controls controls-row"><select>
+					<span ><strong>Bulan</strong></span>
+					<!-- <div class="controls controls-row">-->
+						<select>
 						<option>Maret 2013</option>
 						<option>Februari 2013</option>
 						<option>Januari 2013</option>
 						<option>Desember 2012</option>
 						<option>November 2012</option>
 					</select>
-					</div>
+					<!-- </div> -->
 				</div>
 			</form>
 
@@ -121,6 +122,7 @@
 			</table>
 			</div>
 
+	<div class="jadwal">
 	<h3>Jadwal Ujian IKLA yang tersedia</h3>
 	<table class="table table-bordered table-hover table-condensed">
 			<thead>
@@ -168,6 +170,10 @@
 				</tr>
 			</tbody>
 			</table>
+		</div>
+
+
+		<div class="jadwal">
 			<h3>Jadwal Ujian ICT yang tersedia</h3>
 	<table class="table table-bordered table-hover table-condensed">
 			<thead>
@@ -215,6 +221,7 @@
 				</tr>
 			</tbody>
 			</table>
+		</div>
 		</div>
 	</div>
 </div>

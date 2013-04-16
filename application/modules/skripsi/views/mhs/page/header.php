@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Sistem Informasi Akademik - UIN Sunan Kalijaga</title>
+<title>Skripsi & Munaqosyah</title>
 <link href="<?php echo base_url(); ?>asset/css/style.css" rel="stylesheet" type="text/css"/>
 <script src="<?php echo base_url(); ?>asset/js/bootstrap.min.js"></script>
 </head>

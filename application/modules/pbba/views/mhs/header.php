@@ -7,9 +7,14 @@
         
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta content='pbba' name='description'/>
-        <meta content='aplikasi ujian online' name='keywords'/>
-        
+        <meta content='aplikasi ujian online' name='keywords'/>	
 		<link href="<?php echo base_url(); ?>asset/css/style.css" rel="stylesheet" type="text/css"/>
+		
+		<link href="<?php echo base_url(); ?>asset/css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css"/>
+		<script>!window.jQuery && document.write(unescape('%3Cscript src="<?php echo base_url(); ?>asset/js/jquery-1.9.1.min.js"%3E%3C/script%3E'))</script>
+		<!-- custom scrollbars plugin -->
+		<script src="<?php echo base_url(); ?>asset/js/jquery.mCustomScrollbar.concat.min.js"></script>
+		
     </head>
     <body>
 	<div id="top-header"></div>

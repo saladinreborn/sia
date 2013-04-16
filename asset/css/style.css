@@ -8,10 +8,10 @@ time    : 3 March 2013
   margin: 0;
   padding: 0;
 }
-html body{   
+html body{    
+    background: #fff;    
     font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size:12px;
-    margin: 8px;
 }
 @font-face
 {
@@ -31,53 +31,9 @@ font-family: optimale;
 src: url('../font/Optimale Bold.ttf'),
      url('../font/Optimale Bold.otf'); /* IE9+ */
 }
-@font-face
-{
-font-family: Open Sans;
-src: url('../font/OpenSans-Regular.ttf'),
-     url('../font/OpenSans-Regular-webfont.eot'); /* IE9+ */
-}
-
-/*
-@media screen and (max-width: 980px){
-  #body{
-    width: 90%;
-  }
-
-  #main{
-    width: 60%;
-    float: left;
-    display: none;
-  }
-
-  #sidebar{
-    width: 30%;
-    float: left;
-  }
-
-  #content-space{
-
-    width: 65%;
-    float: left;
-  }
-
-  #name{
-    display: none;
-  }
-
-}
-
-@media screen and (max-width: 700px){
-  #sidebar{
-    display: none;
-    visibility: hidden;
-  }
-
-} */
 
 /*------Header------*/
 #top-header{
-  margin-bottom: 10px;
   position:relative;
   top: 0px;
   left: 0px;
@@ -86,16 +42,19 @@ src: url('../font/OpenSans-Regular.ttf'),
   background-repeat:repeat-x;
   height:50px;
   color:#FFFFFF;
+  min-width:980px;
 }
 
 #body{
-  margin: 10px auto;
-  width: 980px;
+  margin: auto;
+  max-width: 980px;
 }
 
 #header{
-  height: 100px;
-  margin: 10px;
+  height: 75px;
+  max-width: 980px;
+  padding:15px 0px 10px 0px;
+  margin-bottom: 10px;
   overflow:hidden;
 }
 
@@ -129,7 +88,7 @@ src: url('../font/OpenSans-Regular.ttf'),
 #name .universitas-name{  
   text-align:right;
   font-family:optimale;
-  float:left;
+  float:right;
   width:100%;
   font-size:15px; 
   color:#000;
@@ -138,7 +97,7 @@ src: url('../font/OpenSans-Regular.ttf'),
 #name .facultas-name{ 
   text-align:right;
   font-family:cinzel;
-  float:left;
+  float:right;
   width:100%;
   font-size:15px; 
   color:#000;
@@ -148,8 +107,8 @@ src: url('../font/OpenSans-Regular.ttf'),
 
 /*------Main------*/
 #main{ 
-  margin: 15px auto;
-  width: 980px;
+  margin: 0px auto;
+  width:980px;
   overflow:hidden;
 }
 /*-----------------------------------*/
@@ -160,7 +119,7 @@ src: url('../font/OpenSans-Regular.ttf'),
   float:left;
   font-family:Candara;
   font-size:10px;
-  width:300px;
+  width:310px;
 }
 
 /* widget class */
@@ -206,19 +165,12 @@ li .underline-menu {margin-top:2px;border-style:none none solid none;border-colo
 #content{  
   float:left;
   width:665px;
-  font-family: Open Sans;
+  font-family: Candara;
   border-top: 2px solid #CCC;
 }
 
-#content-space{
-  padding:5px 0 0 15px;
-  height:420px;
-  float:left;
-  width:650px;
-}
-
 #content h2{
-  margin: 15px 0px 15px 0px;
+  margin: 20px 0px 20px 0px;
 }
 
 #content h3{
@@ -309,23 +261,15 @@ a:hover.btn-uin{
 
 /* ---------------- */
 
-/*jadwal*/
-.jadwal{
-  width: 100%;
-  float: left;
-  padding: 5px 5px 5px 5px;
-  border-bottom: 1px solid #CCC;
-  margin-bottom: 15px;
+#content-space{
+  padding:5px 0 0 15px;
+  height:420px;
+  float:left;
+  width:650px;
 }
-
-.jadwal th{
-  background-color: black;
-  color: white;
-}
-/*----------------*/
 
 .scroll {
-  padding: 0px 15px 10px 0px;
+  padding: 0 15px 0 0px;
   height:400px;
   float:left;
   width:640px;

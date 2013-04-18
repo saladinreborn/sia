@@ -268,7 +268,12 @@ a:hover.btn-uin{
   width:650px;
 }
 
-.scroll {
+.jadwal{
+  margin-bottom: 25px;
+  border-bottom: 1px solid #A4884A;
+}
+
+  .scroll {
   padding: 0 15px 0 0px;
   height:400px;
   float:left;

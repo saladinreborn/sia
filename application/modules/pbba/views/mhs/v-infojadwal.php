@@ -22,25 +22,36 @@
 				</tr>
 				</thead>
 				<tbody>
-
-				<tr class="error">
-					<td>1</td>
-					<td>TOEC</td>
-					<td>Senin</td>
-					<td>5 Maret 2013</td>
-					<td>07.30 - 09.00</td>
-					<td>Ujian</td>
-					<td>Lewat</td>
+			<?php 
+				$i = 0;
+				foreach ($info as $isi => $value) {
+					$i++;
+					if ($value['UJIAN']=='en'){
+						$ujian = 'TOEC';
+					}
+					else {
+						$ujian = 'IKLA';
+					} 
+						
+					$ruang = $value['NM_RUANG'];
+					$date = $value['TGL'];
+					$mulai = $value['JAM_MULAI'];
+					$selesai = $value['JAM_SELESAI'];
+					if (date("Y-M-d", strtotime($date)) >= date("Y-M-d"))
+						$status = 'Akan Diikuti';
+					else
+						$status = 'Sudah Lewat';
+			?>
+				<tr class="warning">
+					<td><?php echo $i;?></td>
+					<td><?php echo $ujian;?></td>
+					<td><?php echo strftime("%A", strtotime($date));?></td>
+					<td><?php echo $date;?></td>
+					<td><?php echo $mulai." - ".$selesai;?></td>
+					<td><?php echo $ruang;?></td>
+					<td><?php echo $status;?></td>
 				</tr>
-				<tr class="success">
-					<td>2</td>
-					<td>IKLA</td>
-					<td>Selasa</td>
-					<td>9 Maret 2013</td>
-					<td>07.30 - 09.00</td>
-					<td>R. 207</td>
-					<td>Belum Diikuti</td>
-				</tr>
+			<?php } ?>
 			</tbody>
 			</table>
 		</div>

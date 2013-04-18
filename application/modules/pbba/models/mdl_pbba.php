@@ -14,47 +14,11 @@ class Mdl_pbba extends CI_Model
 		return json_decode($hasil, TRUE);
 	}
 
-/*	function get_data($table,$ujian){
-		$sql = "select * from $table where substr(KD_JADWAL, 0,2)='$ujian'";
+	function select_periode($table,$minus){
+		$sql = "SELECT DISTINCT TO_CHAR(TGL, 'MONTH YYYY') as PERIODE from $table WHERE TGL < add_months(SYSDATE, $minus)";
 		$q = $this->db->query($sql);
+		
 		return $q;
-	}*/
-
-	/*function count_peserta($kode_j, $kode_k){
-		$q = $this->db->query("select count(*) as JUMLAH from PBBA_PESERTA_UJIAN where KD_JADWAL='$kode_j' and KD_KELAS='$kode_k'");
-		return $q;
-	}*/
-
-	function get_data($table,$ujian){
-		$sql = "select KD_JADWAL, KD_KELAS, KD_RUANG, TGL, JAM_MULAI, JAM_SELESAI, KUOTA,
-		 (select count(*)
-		 	from PBBA_PESERTA_UJIAN
-		 	where PBBA_JADWAL.KD_JADWAL = PBBA_PESERTA_UJIAN.KD_JADWAL
-		 	and
-		 	PBBA_JADWAL.KD_KELAS = PBBA_PESERTA_UJIAN.KD_KELAS)
-		as JUMLAH
-		from $table where substr(KD_JADWAL, 0,2)='$ujian'";
-
-		$q = $this->db->query($sql);
-		return $q;
-	}
-
-	function select_data($table,$ujian,$date){
-		$sql = "select KD_JADWAL, KD_KELAS, KD_RUANG, TGL, JAM_MULAI, JAM_SELESAI, KUOTA,
-		 (select count(*)
-		 	from PBBA_PESERTA_UJIAN
-		 	where PBBA_JADWAL.KD_JADWAL = PBBA_PESERTA_UJIAN.KD_JADWAL
-		 	and
-		 	PBBA_JADWAL.KD_KELAS = PBBA_PESERTA_UJIAN.KD_KELAS)
-		as JUMLAH
-		from $table where substr(KD_JADWAL, 0,2)='$ujian' and TGL < $date";
-
-		$q = $this->db->query($sql);
-		return $q;
-	}
-
-	function taken_jadwal()	{
-
 	}
 
 }

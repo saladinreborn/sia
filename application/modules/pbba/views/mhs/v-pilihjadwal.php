@@ -40,28 +40,36 @@
 				<tbody>
 				<?php
 					$i = 0;
-						foreach ($english->result() as $isi) {
+						foreach ($english as $isi => $value) {
 						$i++;
-						$mulai = $isi->JAM_MULAI;
-						$selesai = $isi->JAM_SELESAI;
-						$ruang = $isi->KD_RUANG;
-						$kelas= $isi->KD_KELAS;
-						$terisi = $isi->JUMLAH;
+						$mulai = $value['JAM_MULAI'];
+						$selesai = $value['JAM_SELESAI'];
+						$ruang = $value['KD_RUANG'];
+						$terisi = $value['JUMLAH'];
+						$kuota = $value['KUOTA'];
 
-						//foreach ($this->mdl_pbba->count_peserta($kd['j'],$kd['k'])->result() as $jml) {						
+					if ($terisi < $kuota){
+						$tipe = 'success';
+						$link = '';
+						$dis_btn = '';
+					}
+					else{
+						$tipe = 'warning';
+						$link = 'javascript:void(0)';
+						$dis_btn = 'disabled';
+					}
 				?>
-				<tr class="success">
+				<tr class="<?php echo $tipe; ?>">
 					<td><?php echo $i; ?></td>
-					<td><?php echo strftime("%A", strtotime($isi->TGL)); ?></td>
-					<td><?php echo date("d F Y", strtotime($isi->TGL)); ?></td>
+					<td><?php echo strftime("%A", strtotime($value['TGL'])); ?></td>
+					<td><?php echo date("d F Y", strtotime($value['TGL'])); ?></td>
 					<td><?php echo $mulai." - ".$selesai;?></td>
 					<td><?php echo $ruang; ?></td>
 					<td><?php echo $terisi; ?> </td>
-					<td><?php echo $isi->KUOTA; ?></td>
-					<td><a href="" class="btn btn-small">Daftar</a></td>
+					<td><?php echo $kuota; ?></td>
+					<td><a href="<?php echo $link; ?>" class="btn btn-small <?php echo $dis_btn; ?>">Daftar</a></td>
 				</tr>
-				<?php //}
-				 } ?>
+				<?php  } ?>
 			</tbody>
 			</table>
 			
@@ -70,12 +78,12 @@
 				<div class="control-group">
 					<span ><strong>Bulan</strong></span>
 					<!-- <div class="controls controls-row">-->
-						<select>
-						<option>Maret 2013</option>
-						<option>Februari 2013</option>
-						<option>Januari 2013</option>
-						<option>Desember 2012</option>
-						<option>November 2012</option>
+					<select>
+						<?php
+							foreach ($periode as $isi => $value) {
+							echo "<option value='".$value['PERIODE']."'>".$value['PERIODE']."</option>";
+							}
+						?>
 					</select>
 					<!-- </div> -->
 				</div>
@@ -105,26 +113,7 @@
 					<td>30</td>
 					<td>Penuh</td>
 				</tr>
-				<tr class="error">
-					<td>2</td>
-					<td>Senin</td>
-					<td>5 Maret 2013</td>
-					<td>07.30 - 09.00</td>
-					<td>Ujian</td>
-					<td>30</td>
-					<td>30</td>
-					<td>Penuh</td>
-				</tr>
-				<tr class="error">
-					<td>3</td>
-					<td>Senin</td>
-					<td>5 Maret 2013</td>
-					<td>07.30 - 09.00</td>
-					<td>Ujian</td>
-					<td>31</td>
-					<td>30</td>
-					<td>Penuh</td>
-				</tr>
+
 			</tbody>
 			</table>
 			</div>
@@ -144,32 +133,39 @@
 					<th>Keterangan</th>
 				</tr>
 				</thead>
-				<tbody>
-					<?php
+			<tbody>
+				<?php
 					$i = 0;
-						foreach ($arabic->result() as $isi) {
+						foreach ($arabic as $isi => $value) {
 						$i++;
-						$mulai = $isi->JAM_MULAI;
-						$selesai = $isi->JAM_SELESAI;
-						$ruang = $isi->KD_RUANG;
-						$kelas= $isi->KD_KELAS;
-						$terisi = $isi->JUMLAH;
+						$mulai = $value['JAM_MULAI'];
+						$selesai = $value['JAM_SELESAI'];
+						$ruang = $value['KD_RUANG'];
+						$terisi = $value['JUMLAH'];
+						$kuota = $value['KUOTA'];
 
-						//foreach ($this->mdl_pbba->count_peserta($kd['j'],$kd['k'])->result() as $jml) {						
+					if ($terisi < $kuota){
+						$tipe = 'success';
+						$link = '';
+						$dis_btn = '';
+					}
+					else{
+						$tipe = 'warning';
+						$link = 'javascript:void(0)';
+						$dis_btn = 'disabled';
+					}
 				?>
-				<tr class="warning">
+				<tr class="<?php echo $tipe; ?>">
 					<td><?php echo $i; ?></td>
-					<td><?php echo strftime("%A", strtotime($isi->TGL)); ?></td>
-					<td><?php echo date("d F Y", strtotime($isi->TGL)); ?></td>
+					<td><?php echo strftime("%A", strtotime($value['TGL'])); ?></td>
+					<td><?php echo date("d F Y", strtotime($value['TGL'])); ?></td>
 					<td><?php echo $mulai." - ".$selesai;?></td>
 					<td><?php echo $ruang; ?></td>
 					<td><?php echo $terisi; ?> </td>
-					<td><?php echo $isi->KUOTA; ?></td>
-					<td><a href="" class="btn btn-small">Daftar</a></td>
+					<td><?php echo $kuota; ?></td>
+					<td><a href="<?php echo $link; ?>" class="btn btn-small <?php echo $dis_btn; ?>">Daftar</a></td>
 				</tr>
-			<?php } 
-				//} ?>
-				
+				<?php  } ?>
 			</tbody>
 			</table>
 		</div>
